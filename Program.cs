@@ -2,9 +2,21 @@
 Clear();
 
 //1. Crear el carto de bingo de 3 filas y 9 columnas (Matriz[3,9]
-int[,] carton = new int[3, 9];
 
+
+
+
+
+int[,] carton = new int[3, 9];
 Random num = new Random();
+Random blank = new Random();
+
+
+
+
+
+
+
 
 
 for (int i = 0; i == 0; i++)
@@ -13,6 +25,19 @@ for (int i = 0; i == 0; i++)
     for (int j = 0; j < 3; j++)
     {
         carton[j, i] = num.Next(1, 9);
+        bool loop = true;
+        while (loop == true)
+        {
+            for (int l = 0; l < j; l++)
+            {
+                if (carton[j, i] == carton[l, i])
+                {
+                    carton[j, i] = num.Next(1, 9);
+                    l = -1;
+                }
+            }
+            loop = false;
+        }
 
     }
 }
@@ -22,6 +47,19 @@ for (int i = 1; i == 1; i++)
     for (int j = 0; j < 3; j++)
     {
         carton[j, i] = num.Next(10, 19);
+        bool loop = true;
+        while (loop == true)
+        {
+            for (int l = 0; l < j; l++)
+            {
+                if (carton[j, i] == carton[l, i])
+                {
+                    carton[j, i] = num.Next(10, 19);
+                    l = -1;
+                }
+            }
+            loop = false;
+        }
     }
 }
 
@@ -30,6 +68,19 @@ for (int i = 2; i == 2; i++)
     for (int j = 0; j < 3; j++)
     {
         carton[j, i] = num.Next(20, 29);
+        bool loop = true;
+        while (loop == true)
+        {
+            for (int l = 0; l < j; l++)
+            {
+                if (carton[j, i] == carton[l, i])
+                {
+                    carton[j, i] = num.Next(20, 29);
+                    l = -1;
+                }
+            }
+            loop = false;
+        }
     }
 }
 
@@ -38,6 +89,19 @@ for (int i = 3; i == 3; i++)
     for (int j = 0; j < 3; j++)
     {
         carton[j, i] = num.Next(30, 39);
+        bool loop = true;
+        while (loop == true)
+        {
+            for (int l = 0; l < j; l++)
+            {
+                if (carton[j, i] == carton[l, i])
+                {
+                    carton[j, i] = num.Next(30, 39);
+                    l = -1;
+                }
+            }
+            loop = false;
+        }
     }
 }
 
@@ -46,6 +110,19 @@ for (int i = 4; i == 4; i++)
     for (int j = 0; j < 3; j++)
     {
         carton[j, i] = num.Next(40, 49);
+        bool loop = true;
+        while (loop == true)
+        {
+            for (int l = 0; l < j; l++)
+            {
+                if (carton[j, i] == carton[l, i])
+                {
+                    carton[j, i] = num.Next(40, 49);
+                    l = -1;
+                }
+            }
+            loop = false;
+        }
     }
 }
 
@@ -54,6 +131,20 @@ for (int i = 5; i == 5; i++)
     for (int j = 0; j < 3; j++)
     {
         carton[j, i] = num.Next(50, 59);
+        bool loop = true;
+        while (loop == true)
+        {
+            for (int l = 0; l < j; l++)
+            {
+                if (carton[j, i] == carton[l, i])
+                {
+                    carton[j, i] = num.Next(50, 59);
+                    l = -1;
+                }
+            }
+            loop = false;
+        }
+
     }
 }
 
@@ -62,6 +153,19 @@ for (int i = 6; i == 6; i++)
     for (int j = 0; j < 3; j++)
     {
         carton[j, i] = num.Next(60, 69);
+        bool loop = true;
+        while (loop == true)
+        {
+            for (int l = 0; l < j; l++)
+            {
+                if (carton[j, i] == carton[l, i])
+                {
+                    carton[j, i] = num.Next(60, 69);
+                    l = -1;
+                }
+            }
+            loop = false;
+        }
     }
 }
 
@@ -70,6 +174,19 @@ for (int i = 7; i == 7; i++)
     for (int j = 0; j < 3; j++)
     {
         carton[j, i] = num.Next(70, 79);
+        bool loop = true;
+        while (loop == true)
+        {
+            for (int l = 0; l < j; l++)
+            {
+                if (carton[j, i] == carton[l, i])
+                {
+                    carton[j, i] = num.Next(70, 79);
+                    l = -1;
+                }
+            }
+            loop = false;
+        }
     }
 }
 
@@ -78,6 +195,19 @@ for (int i = 8; i == 8; i++)
     for (int j = 0; j < 3; j++)
     {
         carton[j, i] = num.Next(80, 90);
+        bool loop = true;
+        while (loop == true)
+        {
+            for (int l = 0; l < j; l++)
+            {
+                if (carton[j, i] == carton[l, i])
+                {
+                    carton[j, i] = num.Next(80, 90);
+                    l = -1;
+                }
+            }
+            loop = false;
+        }
     }
 }
 
@@ -110,9 +240,22 @@ for (int j = 0; j < 9; j++)
     }
 }
 
+//Agregar espacios en blanco
+
+for (int j = 0; j < 3; j++)
+{
+    for (int i = 0; i < 9; i++)
+    {
+        carton[j, blank.Next(4)] = 00;
+
+    }
+}
 
 
 
+
+
+//Imprimir caton
 for (int j = 0; j < 3; j++)
 {
     for (int i = 0; i < 9; i++)
