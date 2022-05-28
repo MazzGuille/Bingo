@@ -7,49 +7,119 @@ int[,] carton = new int[3, 9];
 Random num = new Random();
 
 
-for (int i = 0; i < 3; i++)
+for (int i = 0; i == 0; i++)
 {
-    for (int j = 0; j < 9; j++)
+
+    for (int j = 0; j < 3; j++)
     {
-        carton[i, j] = num.Next(1, 90);
+        carton[j, i] = num.Next(1, 9);
+
     }
 }
 
 
+for (int i = 1; i == 1; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        carton[j, i] = num.Next(10, 19);
+    }
+}
+
+for (int i = 2; i == 2; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        carton[j, i] = num.Next(20, 29);
+    }
+}
+
+for (int i = 3; i == 3; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        carton[j, i] = num.Next(30, 39);
+    }
+}
+
+for (int i = 4; i == 4; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        carton[j, i] = num.Next(40, 49);
+    }
+}
+
+for (int i = 5; i == 5; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        carton[j, i] = num.Next(50, 59);
+    }
+}
+
+for (int i = 6; i == 6; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        carton[j, i] = num.Next(60, 69);
+    }
+}
+
+for (int i = 7; i == 7; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        carton[j, i] = num.Next(70, 79);
+    }
+}
+
+for (int i = 8; i == 8; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        carton[j, i] = num.Next(80, 90);
+    }
+}
+
+//Ordenar la matriz de forma ascendente con bubble sort
+
 int aux = 0;
-int posMenor = 0;
-int pos = 0;
-for (int e = 0; e < 9; e++)
+int pointer1 = 0;
+int pointer2 = 0;
+for (int j = 0; j < 9; j++)
 {
     for (int i = 0; i < 2; i++)
     {
-        posMenor = i;
-        pos = i + 1;
+        pointer1 = i;
+        pointer2 = i + 1;
         do
         {
-            if (carton[posMenor, e] > carton[pos, e])
+            if (carton[pointer1, j] > carton[pointer2, j])
             {
-                posMenor = pos;
+                pointer1 = pointer2;
             }
-            pos++;
+            pointer2++;
         }
-        while (pos <= 2);
-        if (i != posMenor)
+        while (pointer2 <= 2);
+        if (i != pointer1)
         {
-            aux = carton[i, e];
-            carton[i, e] = carton[posMenor, e];
-            carton[posMenor, e] = aux;
+            aux = carton[i, j];
+            carton[i, j] = carton[pointer1, j];
+            carton[pointer1, j] = aux;
         }
     }
 }
 
 
-for (int i = 0; i < 3; i++)
+
+
+for (int j = 0; j < 3; j++)
 {
-    for (int j = 0; j < 9; j++)
+    for (int i = 0; i < 9; i++)
     {
 
-        Write($"| {carton[i, j]} ");
+        Write($"| {carton[j, i]} ");
 
     }
     WriteLine();
